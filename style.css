@@ -1,0 +1,230 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.top {
+  position: absolute;
+  top: 12%;
+}
+
+body {
+  background: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  color: #333;
+  height: 100vh;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.contain {
+  position: relative;
+  height: 60rem;
+  width: 100rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.75s;
+}
+
+.name {
+  font-size: 4rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-top: -18rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: rgba(219, 32, 88, 0.911);
+  padding: 10px;
+  margin: 38px;
+}
+
+.current {
+  width: 20%;
+  padding: 15px;
+  background-color: rgba(219, 32, 88, 0.911);
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #ccc;
+  position: absolute;
+  bottom: 12%;
+}
+
+p.current-title {
+  font-size: 2rem;
+}
+
+p.current-sorce {
+  font-size: 4rem;
+  padding: 10px;
+}
+
+.dice {
+  position: absolute;
+  height: 20%;
+  top: 14rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39rem;
+}
+.btn--hold {
+  top: 46rem;
+}
+.btn--htp {
+  top: 32rem;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player--active .name {
+  font-weight: 700;
+}
+
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.open-modal {
+  position: absolute;
+  width: 70%;
+  top: 30%;
+  left: 15%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 20px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  animation: modalFadein ease 0.3s;
+}
+
+.close-modal {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 4rem;
+  border: none;
+  background: none;
+}
+
+.close-modal:hover {
+  opacity: 0.6;
+}
+
+.text {
+  font-size: 3rem;
+}
+
+.text-1 {
+  font-size: 2rem;
+  padding-top: 20px;
+}
+
+.over-play {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+@keyframes modalFadein {
+  from {
+    opacity: 0.1;
+    transform: translateY(-140px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
